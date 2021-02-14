@@ -1,3 +1,5 @@
+import Chalk from 'chalk';
+
 class Person {
 
     constructor(name, favoriteColor) {
@@ -6,6 +8,8 @@ class Person {
     }
 
     speak() {
-        console.log(this.name, this.favoriteColor);
+        console.log(Chalk.hex(this.favoriteColor)(this.name));
     }
 }
+
+export default Person;

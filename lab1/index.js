@@ -1,4 +1,4 @@
-import './Alex.js';
-const p = new Person("Alex", "Green");
-const a = new Alex();
+import Alex from './Alex.js';
+
+const a = new Alex("Alex", "#FFFFFF");
 a.speak();
