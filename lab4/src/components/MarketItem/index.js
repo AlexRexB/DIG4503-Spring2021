@@ -3,7 +3,9 @@ import React from 'react';
 function MarketItem(props) {
    return(
        <div>
-           <p>Item</p>
+           <p>
+               Item {props.count}
+            </p>
        </div>
        
    )

@@ -11,7 +11,9 @@ class Market extends React.Component {
     render() {
         return (
             <button onClick={() => {
-
+              const items = this.state.items;
+              items.push(<MarketItem count={items.length} key={items.length}/>);
+              this.setState({items: items});
             }}>Click me!</button>
         );
     }
