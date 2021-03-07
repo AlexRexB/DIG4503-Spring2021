@@ -1,11 +1,7 @@
 import './Fetch.js';
+import Fetch from './Fetch.js';
 
-axios('https://pokeapi.co/api/v2/pokemon' + null)
+const f = new Fetch(2, '#FFFFFF');
+f.fetch();
 
-    .then( (response) => {
-        const pokemon = response.data;
-
-        console.log("This is a " + pokemon.name + " and its ID is " + pokemon.id);
-    })
-    .catch( error => console.log("Error: " + error));
-
+const f2 = new Fetch(-1, '#FFFFFF')
