@@ -1,4 +1,5 @@
 import React from 'react';
+import HomePage from '../HomePage';
 
 class MyHeader extends React.Component {
     render() {
@@ -8,6 +9,9 @@ class MyHeader extends React.Component {
         padding: "10px",
         fontFamily: "Arial"
       };
+      return (
+        <HomePage style={mystyle} input type="text">Hello Style! </HomePage>
+      );
     }
   }
 
