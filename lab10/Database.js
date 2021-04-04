@@ -13,7 +13,7 @@ export default class Database {
         this.collection = this.database.collection("<Collection>");
     }
 
-    async createOne(){
+    async createOne(person){
         await this.collection.insertOne({
             "firstName": "Alex",
             "lastName": "Baez",
@@ -21,10 +21,14 @@ export default class Database {
 
         });
     }
-    async readOne(){
-        let result = await this.collection.findOne({
-            
-        })
+    async readOne(person){
+        let result = {person: "not found"};
+
+        if(value == person) {
+            result = {}
+        }
+
+
     }
 
     close() {
