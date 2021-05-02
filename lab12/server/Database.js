@@ -7,8 +7,6 @@ class Database {
         this.connection = null;
         this.database = null;
         this.collection = null;
-
-
     }
 
     async connect(){
@@ -32,7 +30,7 @@ class Database {
         return createdResult;
     }
 
-    readOne(){
+    async readOne(ISBN){
         if(this.collection != null) {
             const result = await this.collection.readOne({"ISBN": ISBN});
             return {"book": result};
@@ -42,7 +40,7 @@ class Database {
         
         
     }
-    readMany(){
+    async readMany(){
         if(this.collection != null) {
             const result = await this.collection.readOne({"ISBN": ISBN});
             return {"books": result};
@@ -51,13 +49,19 @@ class Database {
         }
 
     }
-    updateOne(){
+    async updateOne(ISBN){
         if(this.collection != null) {
-            const result = await this.collection.updateOne({"ISBN": ISBN}, {$set: {"title":title}});
+            const result = await this.collection.updateOne({"ISBN": ISBN}, 
+            {$set: {
+                    "title":title,
+                    "author":author,
+                    "rating":rating 
+                    }
+            });
         }
         
     }
-    async deleteOne(){
+    async deleteOne(ISBN){
         if(this.collection != null) {
             const result = await this.collection.deleteOne({"ISBN": ISBN});
             return {"books": result.deletedCount};
