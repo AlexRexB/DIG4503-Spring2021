@@ -30,7 +30,7 @@ class Database {
         return createdResult;
     }
 
-    async readOne(){
+    async readOne(ISBN){
         if(this.collection != null) {
             const result = await this.collection.readOne({"ISBN": ISBN});
             return {"book": result};

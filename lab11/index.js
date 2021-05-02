@@ -22,21 +22,29 @@ d.connect();
 // PUT -> d.createOne() -> collection.insertOne()
 App.put("/books/:ISBN", (req, res) => {
     const ISBN = req.params.ISBN;
-
     const title = req.body.title;
     const author = req.body.author;
     const rating = req.body.rating;
+
+    const result = d.createOne({
+        ISBN: ISBN,
+        title: title,
+        author: author,
+        rating: rating
+    });
 
     res.json(result)
 });
 
 // GET -> d.readOne() -> collection.findOne()
 App.get("/books/:ISBN", (req, res) => {
-    const ISBN = req.params.request;
+    const ISBN = req.query.ISBN;
 
-    const title = req.body.title;
-    const author = req.body.author;
-    const rating = req.body.rating;
+    const document = readOne(ISBN);
+
+    res.json(document);
+
+
 
 });
 
