@@ -26,7 +26,6 @@ App.put("/books/:ISBN", (req, res) => {
         title: title,
         author: author,
         rating: rating,
-
     })
 });
 

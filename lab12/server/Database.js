@@ -23,12 +23,13 @@ class Database {
         }
     }
 
-   async createOne(ISBN){
+   async createOne(document){
        let createdResult = null;
 
         if (this.collection != null) {
-            createdResult = await this.collection.insertOne();
+            createdResult = await this.collection.insertOne(document);
         }
+        return createdResult;
     }
 
     readOne(){
