@@ -56,6 +56,7 @@ App.patch("/movies/:id", (req, res) => {
     const plot = req.body.plot;
 
     const result = d.updateOne({
+        id: id,
         title: title,
         year: year,
         plot: plot});
