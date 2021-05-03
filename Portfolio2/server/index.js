@@ -39,6 +39,10 @@ App.put("/movies/:id", (req, res) => {
 // GET -> d.readOne() -> collection.findOne()
 App.get("/movies/:id", (req, res) => {
     const id = req.params.id;
+
+    const result = d.readOne(id)
+
+    res.json(result);
     
 
 });
@@ -47,10 +51,16 @@ App.get("/movies/:id", (req, res) => {
 // PATCH -> d.updateOne() -> collection.updateOne()
 App.patch("/movies/:id", (req, res) => {
     const id = req.params.id;
+    const title = req.body.title;
+    const year = req.body.year;
+    const plot = req.body.plot;
 
-    const result = d.updateOne(id);
+    const result = d.updateOne({
+        title: title,
+        year: year,
+        plot: plot});
 
-    res.json(result)
+        res.json(result);
 
 
 });
@@ -59,7 +69,7 @@ App.patch("/movies/:id", (req, res) => {
 App.delete("/movies/:id", (req, res) => {
     const id = req.params.id;
 
-    const result = d.deleteOne({id});
+    const result = d.deleteOne(id);
 
     res.json(result);
 });

@@ -40,11 +40,11 @@ class Database {
         return updatedResult;
     }
 
-    async readOne(query){
+    async readOne(id){
         let foundDocument = null;
 
         if(this.collection != null) {
-            foundDocument = await this.collection.readOne({query});
+            foundDocument = await this.collection.readOne({"id": id});
         } 
         return foundDocument;
         
@@ -61,7 +61,7 @@ class Database {
     
     async deleteOne(id){
         if(this.collection != null) {
-            const result = await this.collection.deleteOne(id);
+            const result = await this.collection.deleteOne({"id": id});
             return {"movies deleted": result.deletedCount};
         } else {
             return {"movies deleted": 0};
