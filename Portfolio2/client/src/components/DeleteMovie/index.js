@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Axios from 'axios';
 
 function DeleteMovie(){
-        const [removeTitle] = useState("");
+        const [removeTitle, setRemoveTitle] = useState("");
 
 const deleteMovie = () => {
     Axios.delete("http://localhost:45030/movies/title")
@@ -15,7 +15,7 @@ const deleteMovie = () => {
 }
     return (
       <div>
-            <input type="text" onChange={(event) => removeTitle(event.target.value)} />
+            <input type="text" onChange={(event) => setRemoveTitle(event.target.value)} />
           <button onClick={() => deleteMovie()}>Click to delete Movie By Title</button>
       </div>
     );

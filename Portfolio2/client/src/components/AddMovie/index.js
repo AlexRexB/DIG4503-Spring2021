@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Axios from 'axios';
 
 function AddMovie() {
-    const [setNewTitle] = useState("");
-    const [setNewYear] = useState("");
-    const [setNewPlot] = useState("");
+    const [newTitle, setNewTitle] = useState("");
+    const [newYear, setNewYear] = useState("");
+    const [newPlot, setNewPlot] = useState("");
 
     const putTitle = () => {
         Axios.put("http://localhost:45030/movies/title")

@@ -47,6 +47,16 @@ App.get("/movies/:id", (req, res) => {
 
 });
 
+App.get("/movies/:id", (req, res) => {
+    const id = req.params.id;
+
+    const result = d.readMany(id)
+
+    res.json(result);
+    
+
+});
+
 
 // PATCH -> d.updateOne() -> collection.updateOne()
 App.patch("/movies/:id", (req, res) => {

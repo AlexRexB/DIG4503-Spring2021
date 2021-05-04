@@ -1,7 +1,7 @@
 import AddMovie from './components/AddMovie';
 import DeleteMovie from './components/DeleteMovie';
 import EditMovie from './components/EditMovie';
-import MovieList from './components/MovieList';
+import MovieSearch from './components/MovieSearch';
 
 function App() {
 return (
@@ -9,7 +9,7 @@ return (
     <AddMovie />
     <DeleteMovie />
     <EditMovie />
-    <MovieList />
+    <MovieSearch />
   </div>
   
   );
